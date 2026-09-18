@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contacts', function () {
+    $contacts = [
+    'Телефон' => '81234567890',
+    'Email' => 'ivan.ivanov@example.com',
+    'Адрес' => 'ул. Тверская д.1'
+    ];
+    return view('contacts',['contacts' => $contacts]);
+});
