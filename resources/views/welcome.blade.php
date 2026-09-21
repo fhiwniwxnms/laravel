@@ -1,6 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Привет! Это моя первая лабораторная работа на Laravel 😺</h1>
-<p>Laravel — это популярный бесплатный веб-фреймворк с открытым исходным кодом, созданный для разработки сайтов и веб-приложений на языке программирования PHP. Фреймворк предоставляет готовую основу и набор инструментов, поэтому программистам не нужно писать базовые функции (авторизацию, маршрутизацию или работу с базой данных) с нуля.</p>
+    <h1>Последние публикации</h1>
+    <div class="articles">
+        @foreach ($articles as $index => $article) 
+            <div class='article'>
+                <a href="/galery/{{ $index }}">
+                    <img src="/images/{{ $article['preview_image'] }}" alt="{{ $article['name'] }}">
+                </a>
+                <h2>{{ $article['name'] }}</h2>
+                <h3>{{ $article['date'] }}</h3>
+                @if (isset($article['shortDesc']))
+                    <p>{{ $article['shortDesc'] }}</p>
+                @endif
+            </div>
+        @endforeach
+    </div>
 @endsection

@@ -9,9 +9,9 @@
 <body>
     <header>
         <nav>
-            <a href="/">Главная</a>
-            <a href="/about">О нас</a>
-            <a href="/contacts">Контакты</a>
+            <a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Главная</a>
+            <a href="/about" class="{{ request()->is('about') ? 'active' : '' }}">О нас</a>
+            <a href="/contacts" class="{{ request()->is('contacts') ? 'active' : '' }}">Контакты</a>
         </nav>
     </header>
     <main>
