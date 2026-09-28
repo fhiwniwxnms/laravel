@@ -3,10 +3,12 @@
     --buttercup-sky: #fff2b2;
     --denim-blue: #105f81;
     --dewy-blue: #3879c0;
+    --dewy-blue-10: #3879c01a;
     --white: #ffffff;
     --white-20: #ffffff40;
     --white-50: #ffffff80;
     --dirty-diana: #e9e3ad;
+    --error: #ff5858;
     background-color: var(--background);
     color: var(--denim-blue);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -40,7 +42,7 @@ a {
     border-radius: 40px;
     font-size: 2rem;
     font-weight: 600;
-    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    transition: transform 0.2s 0.2s , background-color 0.2s ease, color 0.2s ease;
 }
 
 a:hover {
@@ -211,6 +213,68 @@ p {
 .galery-article h2 {
     margin: 5px 0 20px;
     color: var(--dewy-blue);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white-50);
+    width: 550px;
+    padding: 30px 50px 40px;
+    border-radius: 30px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5rem;
+    color: var(--dewy-blue);
+    font-weight: 600;
+    margin-top: 25px;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+input {
+    margin-top: 6px;
+    border: 1px solid var(--dewy-blue);
+    border-radius: 12px;
+    width: 450px;
+    height: 40px;
+    padding: 10px;
+}
+
+input:hover, input:focus {
+    background-color: var(--dewy-blue-10);
+    transition: all 0.2s ease;
+}
+
+.error {
+    background: none;
+    color: var(--error);
+    padding: 0;
+    font-size: 1.4rem;
+    margin-top: 4px;
+}
+
+#signin {
+    align-self: center;
+    margin-top: 30px;
+    color: var(--buttercup-sky);
+    background-color: var(--dewy-blue);
+    border: 3px dotted var(--white-50);
+    border-radius: 25px;
+    width: 400px;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 12px;
+}
+
+#signin:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease ;
 }
 
 footer {
