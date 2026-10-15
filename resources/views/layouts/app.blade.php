@@ -12,6 +12,8 @@
             <a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Главная</a>
             <a href="/about" class="{{ request()->is('about') ? 'active' : '' }}">О нас</a>
             <a href="/contacts" class="{{ request()->is('contacts') ? 'active' : '' }}">Контакты</a>
+            <a href="/articles" class="{{ request()->is('articles') ? 'active' : '' }}">Новости</a>
+            <a href="/singin" class="{{ request()->is('singin') ? 'active' : '' }}">Регистрация</a>
         </nav>
     </header>
     <main>

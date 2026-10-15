@@ -36,4 +36,4 @@ Route::get('/galery/{index}', [MainController::class, 'galery']);
 Route::get('/signin', [AuthController::class, 'create']);
 Route::post('/signin', [AuthController::class, 'registration']);
 
-Route::get('/articles', [ArticleController::class, 'index']);
+Route::resource('articles', ArticleController::class);

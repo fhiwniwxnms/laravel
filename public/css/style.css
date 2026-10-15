@@ -67,6 +67,10 @@ nav {
     justify-content: space-evenly;
 }
 
+nav a {
+    padding: 10px 35px;
+}
+
 h1 {
     font-size: 4rem;
     margin-top: 30px;
@@ -275,6 +279,205 @@ input:hover, input:focus {
 #signin:hover {
     transform: scale(1.05);
     transition: all 0.2s ease ;
+}
+
+.pagination {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.pagination nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.pagination a,
+.pagination span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 38px;
+    min-height: 38px;
+    padding: 6px 12px;
+    border: 2px solid var(--dirty-diana);
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.pagination p {
+    margin-bottom: 10px;
+}
+
+.pagination a:hover {
+    background-color: var(--dewy-blue);
+    color: var(--buttercup-sky);
+}
+
+.pagination [aria-current="page"] span {
+    background-color: var(--dewy-blue);
+    color: var(--buttercup-sky);
+    border-color: var(--dewy-blue);
+}
+
+.pagination p {
+    background: none;
+    padding: 0;
+    font-size: 1.4rem;
+}
+
+
+body {
+    width: calc(100% - 30px);
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    min-width: 0;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+nav a {
+    padding: 10px 20px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.articles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 240px));
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.article {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: anywhere;
+}
+
+.article img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    flex-shrink: 0;
+}
+
+.article h2 {
+    overflow-wrap: anywhere;
+}
+
+.article p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.article form {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    margin: auto 8px 12px;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+}
+
+.article form button {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 36px;
+    padding: 7px 12px;
+    border: 2px solid var(--dirty-diana);
+    border-radius: 20px;
+    background: var(--white-50);
+    color: var(--dewy-blue);
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.article form button:hover {
+    background-color: var(--dewy-blue);
+    color: var(--buttercup-sky);
+}
+
+.article > a {
+    display: block;
+    margin: 0 8px 10px;
+}
+
+.article a:hover {
+    color: var(--denim-blue);
+}
+
+.galery-article {
+    margin-top: 50px;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 20px;
+    overflow-wrap: anywhere;
+}
+
+.galery-article img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.galery-article h1 {
+    overflow-wrap: anywhere;
+}
+
+.galery-article p {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+    line-height: 1.4;
+}
+
+.galery-article > a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+
+.create-a {
+    display: inline-block;
+    margin-bottom: 30px;
 }
 
 footer {

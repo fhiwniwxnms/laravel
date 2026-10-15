@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'date',
+        'preview_image',
+        'full_image',
+        'shortDesc',
+        'fullText',
+    ];
 }
