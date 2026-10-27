@@ -13,7 +13,14 @@
             <a href="/about" class="{{ request()->is('about') ? 'active' : '' }}">О нас</a>
             <a href="/contacts" class="{{ request()->is('contacts') ? 'active' : '' }}">Контакты</a>
             <a href="/articles" class="{{ request()->is('articles') ? 'active' : '' }}">Новости</a>
-            <a href="/singin" class="{{ request()->is('singin') ? 'active' : '' }}">Регистрация</a>
+            @auth
+                <form action="/logout" method="POST" class="logout">
+                    @csrf
+                    <button type="submit" id="logout">Выйти</button>
+                </form>
+            @else
+                <a href="/login">Войти</a>
+            @endauth
         </nav>
     </header>
     <main>

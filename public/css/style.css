@@ -480,6 +480,64 @@ nav a {
     margin-bottom: 30px;
 }
 
+#login {
+    background: var(--dewy-blue);
+    color: var(--buttercup-sky);
+    margin-top: 30px;
+    text-decoration: none;
+    padding: 10px 50px;
+    border: 3px solid var(--dirty-diana);
+    border-radius: 40px;
+    font-size: 2rem;
+    font-weight: 600;
+    transition: transform 0.2s ease, border 0.2s ease, color 0.2s ease;
+}
+
+#login:hover {
+    border-color: var(--denim-blue);
+    transform: scale(1.03);
+}
+
+.singin-login {
+    margin-top: 20px;
+}
+
+.singin-login a {
+    border: none;
+    padding: 0;
+}
+
+.singin-login a:hover {
+    background: none;
+    color: var(--dewy-blue);
+    text-decoration: underline;
+}
+
+.logout {
+    width: fit-content;
+    padding: 0;
+    background: none;
+    transition: transform 0.2s ease , background-color 0.2s ease, color 0.2s ease;
+}
+
+.logout:hover {
+    transform: translateY(-3px);
+    background-color: var(--white-50);
+}
+
+.logout button {
+    background: none;
+    color: var(--dewy-blue);
+    text-decoration: none;
+    padding: 10px 30px;
+    border: 3px solid var(--dirty-diana);
+    border-radius: 40px;
+    font-size: 1.9rem;
+    font-weight: 600;
+    transition: transform 0.2s 0.2s , background-color 0.2s ease, color 0.2s ease;
+    width: fit-content;
+}
+
 footer {
     margin-top: 30px;
     border-top: 2px solid var(--dirty-diana);

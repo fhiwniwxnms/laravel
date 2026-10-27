@@ -22,6 +22,13 @@
                 <p class="error">{{ $errors->first('password') }}</p>
             @endif
         </label>
+        <label for="password-confirmation">Подтверждение пароля
+            <input type="password" name="password_confirmation" id="password-confirmation">
+            @if ($errors->has('password_confirmation')) 
+                <p class="error">{{ $errors->first('password_confirmation') }}</p>
+            @endif
+        </label>
         <button type="submit" id="signin">Зарегистрироваться</button>
     </form>
+    <p class="singin-login">Уже есть аккаунт? <a href="/login">Войти</a></p>
 @endsection

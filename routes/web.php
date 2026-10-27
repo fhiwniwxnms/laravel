@@ -36,4 +36,9 @@ Route::get('/galery/{index}', [MainController::class, 'galery']);
 Route::get('/signin', [AuthController::class, 'create']);
 Route::post('/signin', [AuthController::class, 'registration']);
 
-Route::resource('articles', ArticleController::class);
+Route::resource('articles', ArticleController::class)->middleware('auth:sanctum');
+
+Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
