@@ -58,7 +58,7 @@ a:hover {
 }
 
 .active:hover {
-    background-color: var(--dewy-blue);
+    background-color: var(--denim-blue);
 }
 
 nav {
@@ -543,4 +543,98 @@ footer {
     border-top: 2px solid var(--dirty-diana);
     font-size: 1.3rem;
     color: var(--dewy-blue);
+}
+
+h2.h2-comment {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white-50);
+    padding: 15px 25px;
+    border-radius: 20px;
+    margin: 15px 0;
+    position: relative;
+}
+
+.comment strong {
+    font-size: 2rem;
+}
+
+.comment p {
+    background: none;
+    margin: 5px 0 10px;
+    padding: 0;
+}
+
+.comment small {
+    font-size: 1.3rem;
+    color: var(--dewy-blue);
+}
+
+.write-comment {
+    padding: 20px 25px;
+    width: 100%;
+}
+
+.write-comment textarea {
+    background-color: var(--white-50);
+    border: 1px solid var(--dewy-blue);
+    border-radius: 20px;
+    padding: 10px 15px;
+    resize: vertical;
+    min-height: 80px;
+    max-height: 300px;
+    color: var(--denim-blue);
+    font-size: 1.5rem;
+    margin: 10px 0 20px;
+}
+
+.write-comment button {
+    background-color: var(--dewy-blue);
+    color: var(--buttercup-sky);
+    border: 2px dotted var(--buttercup-sky);
+    text-decoration: none;
+    padding: 10px 50px;
+    border-radius: 40px;
+    font-size: 2rem;
+    font-weight: 600;
+    width: 300px;
+    align-self: center;
+    transition: transform 0.2s 0.2s , background-color 0.2s ease, color 0.2s ease;
+}
+
+.write-comment button:hover {
+    transform: translateY(-3px);
+    background-color: var(--denim-blue);
+}
+
+.delete-comment {
+    position: absolute;
+    background: none;
+    z-index: 999;
+    top: -10px;
+    right: -310px;
+}
+
+.delete-comment button {
+    background: none;
+    color: var(--dewy-blue);
+    text-decoration: none;
+    padding: 10px 10px;
+    border: 2px solid var(--dirty-diana);
+    border-radius: 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 170px;
+    transition: transform 0.2s 0.2s , background-color 0.2s ease, color 0.2s ease;
+}
+
+.delete-comment button:hover {
+    transform: translateY(-3px);
+    background-color: var(--dewy-blue);
+    color: var(--buttercup-sky);
 }

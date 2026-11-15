@@ -17,4 +17,9 @@ class Article extends Model
         'shortDesc',
         'fullText',
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
