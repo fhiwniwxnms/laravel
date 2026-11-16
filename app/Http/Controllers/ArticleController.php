@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use App\Models\Article;
 use Illuminate\Http\Request;
+use App\Mail\NewArticleMail;
+use Illuminate\Support\Facades\Mail;
+use App\Models\User;
 
 class ArticleController extends Controller
 {
@@ -31,10 +34,18 @@ class ArticleController extends Controller
             'fullText' => 'required|string',
         ]);
 
-        Article::create($validated);
+        $article = Article::create($validated);
+        $moderators = User::whereHas('role', function ($query) {
+            $query->where('name', 'moderator');
+        })->get();
+
+        foreach ($moderators as $moderator) {
+            Mail::to($moderator->email)->send(new NewArticleMail($article));
+        }
         return redirect()->route('articles.index');
     }
 
+    
     public function edit(Article $article)
     {
         $this->authorize('update', $article);
