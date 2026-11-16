@@ -580,7 +580,8 @@ h2.h2-comment {
     width: 100%;
 }
 
-.write-comment textarea {
+.write-comment textarea, 
+.update-comment textarea {
     background-color: var(--white-50);
     border: 1px solid var(--dewy-blue);
     border-radius: 20px;
@@ -593,7 +594,12 @@ h2.h2-comment {
     margin: 10px 0 20px;
 }
 
-.write-comment button {
+.update-comment textarea {
+    min-height: 40px;
+}
+
+.write-comment button,
+.update-comment button {
     background-color: var(--dewy-blue);
     color: var(--buttercup-sky);
     border: 2px dotted var(--buttercup-sky);
@@ -607,7 +613,12 @@ h2.h2-comment {
     transition: transform 0.2s 0.2s , background-color 0.2s ease, color 0.2s ease;
 }
 
-.write-comment button:hover {
+.update-comment button {
+    width: 150px;
+}
+
+.write-comment button:hover,
+.update-comment button:hover {
     transform: translateY(-3px);
     background-color: var(--denim-blue);
 }
@@ -637,4 +648,13 @@ h2.h2-comment {
     transform: translateY(-3px);
     background-color: var(--dewy-blue);
     color: var(--buttercup-sky);
+}
+
+details {
+    font-size: 1.3rem;
+    margin: 10px 0;
+}
+
+summary {
+    margin-bottom: 5px;
 }

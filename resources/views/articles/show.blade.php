@@ -18,6 +18,21 @@
             <p>{{ $comment->text }}</p>
             <small>{{ $comment->created_at->format('d.m.Y H:i') }}</small>
 
+            @can('update', $comment)
+                <details>
+                    <summary>Редактировать</summary>
+                    <form action="{{ route('comments.update', $comment) }}" method="POST" class="update-comment">
+                        @csrf
+                        @method('PUT')
+                        <textarea name="text" required>{{ $comment->text }}</textarea>
+                        @error('text')
+                            <p>{{ $message }}</p>
+                        @enderror
+                        <button type="submit">Сохранить</button>
+                    </form>
+                </details>
+            @endcan
+
             @can('delete', $comment)
                 <form action="{{ route('comments.destroy', $comment) }}" method="POST" class="delete-comment">
                     @csrf

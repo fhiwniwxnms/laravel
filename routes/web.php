@@ -41,6 +41,12 @@ Route::resource('articles', ArticleController::class)->middleware('auth:sanctum'
 Route::post('/articles/{article}/comments', [CommentController::class, 'store'])
     ->name('comments.store')
     ->middleware('auth:sanctum');
+Route::get('/comments/{comment}/edit', [CommentController::class, 'edit'])
+    ->name('comments.edit')
+    ->middleware('auth:sanctum');
+Route::put('/comments/{comment}', [CommentController::class, 'update'])
+    ->name('comments.update')
+    ->middleware('auth:sanctum');
 Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])
     ->name('comments.destroy')
     ->middleware('auth:sanctum');
