@@ -50,6 +50,15 @@ Route::put('/comments/{comment}', [CommentController::class, 'update'])
 Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])
     ->name('comments.destroy')
     ->middleware('auth:sanctum');
+Route::get('/comments/moderation', [CommentController::class, 'moderation'])
+    ->name('comments.moderation')
+    ->middleware('auth:sanctum');
+Route::patch('/comments/{comment}/approve', [CommentController::class, 'approve'])
+    ->name('comments.approve')
+    ->middleware('auth:sanctum');
+Route::delete('/comments/{comment}/reject', [CommentController::class, 'reject'])
+    ->name('comments.reject')
+    ->middleware('auth:sanctum');
 
 Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);

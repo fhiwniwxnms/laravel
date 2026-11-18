@@ -19,9 +19,12 @@ class CommentController extends Controller
         $article->comments()->create([
             'user_id' => $request->user()->id,
             'text' => $validated['text'],
+            'is_approved' => false,
         ]);
 
-        return redirect()->route('articles.show', $article);
+        return redirect()
+            ->route('articles.show', $article)
+            ->with('status', 'Ваш комментарий отправлен и ожидает модерации.');
     }
 
     public function edit(Comment $comment)
@@ -52,5 +55,35 @@ class CommentController extends Controller
         $article = $comment->article;
         $comment->delete();
         return redirect()->route('articles.show', $article);
+    }
+
+    public function moderation()
+    {
+        $this->authorize('moderate', Comment::class);
+        $comments = Comment::where('is_approved', false)
+            ->with(['user', 'article'])
+            ->latest()
+            ->get();
+        return view('comments.moderation', compact('comments'));
+    }
+
+    public function approve(Comment $comment)
+    {
+        $this->authorize('moderate', Comment::class);
+        $comment->update([
+            'is_approved' => true,
+        ]);
+        return redirect()
+            ->route('comments.moderation')
+            ->with('status', 'Комментарий одобрен');
+    }
+
+    public function reject(Comment $comment)
+    {
+        $this->authorize('moderate', Comment::class);
+        $comment->delete();
+        return redirect()
+            ->route('comments.moderation')
+            ->with('status', 'Комментарий отклонён');
     }
 }

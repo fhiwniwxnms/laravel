@@ -18,7 +18,6 @@ class CommentPolicy
         if ($user->role?->name === 'reader') {
             return Response::allow();
         }
-
         return Response::deny(
             'Только читатель может добавлять комментарии.'
         );
@@ -29,7 +28,6 @@ class CommentPolicy
         if ($user->id === $comment->user_id) {
             return Response::allow();
         }
-
         return Response::deny(
             'Редактировать комментарий может только его автор или модератор.'
         );
@@ -40,9 +38,18 @@ class CommentPolicy
         if ($user->id === $comment->user_id) {
             return Response::allow();
         }
-
         return Response::deny(
             'Удалять комментарий может только его автор или модератор.'
+        );
+    }
+
+    public function moderate(User $user): Response
+    {
+        if ($user->role?->name === 'moderator') {
+            return Response::allow();
+        }
+        return Response::deny(
+            'Только модератор может просматривать комментарии на модерации.'
         );
     }
 }

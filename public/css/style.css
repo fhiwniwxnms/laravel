@@ -550,7 +550,8 @@ h2.h2-comment {
     margin-bottom: 10px;
 }
 
-.comment {
+.comment,
+.comment-mod {
     display: flex;
     flex-direction: column;
     background-color: var(--white-50);
@@ -560,17 +561,20 @@ h2.h2-comment {
     position: relative;
 }
 
-.comment strong {
+.comment strong,
+.comment-mod strong {
     font-size: 2rem;
 }
 
-.comment p {
+.comment p,
+.comment-mod p {
     background: none;
     margin: 5px 0 10px;
     padding: 0;
 }
 
-.comment small {
+.comment small,
+.comment-mod small {
     font-size: 1.3rem;
     color: var(--dewy-blue);
 }
@@ -627,7 +631,7 @@ h2.h2-comment {
     position: absolute;
     background: none;
     z-index: 999;
-    top: -10px;
+    bottom: -10px;
     right: -310px;
 }
 
@@ -657,4 +661,60 @@ details {
 
 summary {
     margin-bottom: 5px;
+}
+
+.success-message {
+    margin-bottom: 10px;
+}
+
+.comment-mod h3 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.comment-mod p.text {
+    margin-top: 0;
+}
+
+.approve-buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0 10px;
+}
+
+.comment-mod .action {
+    background: none;
+    padding: 0;
+}
+
+.comment-mod .action button {
+    background-color: var(--dewy-blue);
+    color: var(--buttercup-sky);
+    border: 2px dotted var(--buttercup-sky);
+    text-decoration: none;
+    padding: 10px 50px;
+    border-radius: 40px;
+    font-size: 2rem;
+    font-weight: 600;
+    width: 200px;
+    align-self: center;
+    transition: transform 0.2s 0.2s , background-color 0.2s ease, color 0.2s ease;
+}
+
+.comment-mod .action button:hover {
+    transform: translateY(-3px);
+    background-color: var(--dewy-blue);
+    color: var(--buttercup-sky);
+}
+
+.comment-mod a {
+    border: none;
+    color: var(--denim-blue);
+    text-decoration: underline;
+    padding: 0;
+}
+
+.comment-mod a:hover {
+    background: none;
+    color: var(--dewy-blue);
 }

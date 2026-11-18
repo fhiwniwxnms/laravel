@@ -14,6 +14,13 @@
             <a href="/contacts" class="{{ request()->is('contacts') ? 'active' : '' }}">Контакты</a>
             <a href="/articles" class="{{ request()->is('articles') ? 'active' : '' }}">Новости</a>
             @auth
+                @if (auth()->user()->role?->name === 'moderator')
+                    <a href="{{ route('comments.moderation') }}"
+                    class="{{ request()->is('comments/moderation') ? 'active' : '' }}">
+                        Модерация комментариев
+                    </a>
+                @endif
+
                 <form action="/logout" method="POST" class="logout">
                     @csrf
                     <button type="submit" id="logout">Выйти</button>

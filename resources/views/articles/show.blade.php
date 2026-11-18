@@ -12,7 +12,11 @@
     </div>
     <h2 class="h2-comment">✿ Комментарии</h2>
 
-    @foreach ($article->comments as $comment)
+    @if (session('status'))
+        <p class="success-message">{{ session('status') }}</p>
+    @endif
+
+    @foreach ($article->comments->where('is_approved', true) as $comment)
         <div class="comment">
             <strong>{{ $comment->user->name }}</strong>
             <p>{{ $comment->text }}</p>
